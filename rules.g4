@@ -1,4 +1,4 @@
-grammar PGrammar;
+grammar rules;
 
 
 
