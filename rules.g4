@@ -37,11 +37,10 @@ DOT: '.';
 O_B: '{';
 C_B: '}';
 O_P: '(';
-X_P: ')';
+C_P: ')';
 SC: ';';
 ASSIGN: '=';
 COMMA: ',';
-EMPTY: ' ';
 ID: [a-zA-Z_] [a-zA-Z_0-9]* {
 	if (getText().equals("true") ||
 	    getText().equals("false") ||
@@ -60,6 +59,9 @@ ID: [a-zA-Z_] [a-zA-Z_0-9]* {
 STRING: BASIC_SOURCE_CHAR*;
 BASIC_SOURCE_CHAR: ~["\\\n] | ESCAPE_SEQUENCE;
 ESCAPE_SEQUENCE: '\\' ('"' | '\\');
+COMMENT: '/*' .*? '*/'-> skip;
+LINE_COMMENT: '//' ~[\r\n]* -> skip;
+WS: [ \t\r\n]+ -> skip;
 
 
 
@@ -84,16 +86,18 @@ type: INT_T
 block: O_B statements C_B;
 
 statements: statement statements
-| EMPTY;
+| empty;
+
+empty: ;
 
 statement : SC
 | block
 | type items
-| ID ASSIGN expression ;
-| ID PLUSPLUS ;
-| ID MINUSMINUS ;
+| ID ASSIGN expression
+| ID PLUSPLUS
+| ID MINUSMINUS
 | RETURN SC
-| RETRUN expression SC
+| RETURN expression SC
 | IF O_P expression C_P statement
 | IF O_P expression C_P statement ELSE statement
 | WHILE O_P expression C_P statement
@@ -112,11 +116,11 @@ expression: INTEGER
 | ID O_P C_P
 | ID O_P parameters C_P
 | O_P expression C_P
-| unary-operator expression
-| expression binary-operator expression;
+| unaryoperator expression
+| expression binaryoperator expression;
 
 parameters: expression COMMA parameters | expression;
 
-unary-operator: MINUS | EXCLEM;
+unaryoperator: MINUS | EXCLEM;
 
-binary-operator: TIMES | DEVIDE | MOD | PLUS | MINUS | LT | GT | LE | GE | EQ | NE | LOG_AND | LOG_OR;
+binaryoperator: TIMES | DEVIDE | MOD | PLUS | MINUS | LT | GT | LE | GE | EQ | NE | LOG_AND | LOG_OR;
