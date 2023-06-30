@@ -207,18 +207,10 @@ class rulesLexer(Lexer):
     def ID_action(self, localctx:RuleContext , actionIndex:int):
         if actionIndex == 0:
 
-            	if (getText().equals("true") ||
-            	    getText().equals("false") ||
-            	    getText().equals("int") ||
-            		getText().equals("double") ||
-            		getText().equals("void") ||
-            		getText().equals("boolean") ||
-            		getText().equals("if") ||
-            		getText().equals("else") ||
-            		getText().equals("while") ||
-            		getText().equals("return")){
-            			System.err.println("Error");
-            		}
+            	if localctx.getText() == "true" or localctx.getText() == "false" or localctx.getText() == "int" or localctx.getText() == "double" or localctx.getText() == "void" or localctx.getText() == "boolean" or localctx.getText() == "if" or localctx.getText() == "else" or localctx.getText() == "while" or localctx.getText() == "return":
+            			print("error keyword in id")
+            			
+
 
      
 

@@ -42,18 +42,10 @@ SC: ';';
 ASSIGN: '=';
 COMMA: ',';
 ID: [a-zA-Z_] [a-zA-Z_0-9]* {
-	if (getText().equals("true") ||
-	    getText().equals("false") ||
-	    getText().equals("int") ||
-		getText().equals("double") ||
-		getText().equals("void") ||
-		getText().equals("boolean") ||
-		getText().equals("if") ||
-		getText().equals("else") ||
-		getText().equals("while") ||
-		getText().equals("return")){
-			System.err.println("Error");
-		}
+	if localctx.getText() == "true" or localctx.getText() == "false" or localctx.getText() == "int" or localctx.getText() == "double" or localctx.getText() == "void" or localctx.getText() == "boolean" or localctx.getText() == "if" or localctx.getText() == "else" or localctx.getText() == "while" or localctx.getText() == "return":
+			print("error keyword in id")
+			
+
 };
 
 STRING: BASIC_SOURCE_CHAR*;
