@@ -1,4 +1,4 @@
-int main(){
+boolean main(){
     int x = 15 + 6;
     return 0;
 }

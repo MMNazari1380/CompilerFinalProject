@@ -14,7 +14,7 @@ class rulesListener(ParseTreeListener):
 
     # Exit a parse tree produced by rulesParser#program.
     def exitProgram(self, ctx:rulesParser.ProgramContext):
-        print("program")
+        pass
 
 
     # Enter a parse tree produced by rulesParser#functions.
@@ -23,7 +23,7 @@ class rulesListener(ParseTreeListener):
 
     # Exit a parse tree produced by rulesParser#functions.
     def exitFunctions(self, ctx:rulesParser.FunctionsContext):
-        print("functions")
+        pass
 
 
     # Enter a parse tree produced by rulesParser#function.
@@ -32,7 +32,7 @@ class rulesListener(ParseTreeListener):
 
     # Exit a parse tree produced by rulesParser#function.
     def exitFunction(self, ctx:rulesParser.FunctionContext):
-        print("function")
+        pass
 
 
     # Enter a parse tree produced by rulesParser#arguments.
@@ -41,7 +41,7 @@ class rulesListener(ParseTreeListener):
 
     # Exit a parse tree produced by rulesParser#arguments.
     def exitArguments(self, ctx:rulesParser.ArgumentsContext):
-        print("arguments")
+        pass
 
 
     # Enter a parse tree produced by rulesParser#argument.
@@ -50,7 +50,7 @@ class rulesListener(ParseTreeListener):
 
     # Exit a parse tree produced by rulesParser#argument.
     def exitArgument(self, ctx:rulesParser.ArgumentContext):
-        print("argument")
+        pass
 
 
     # Enter a parse tree produced by rulesParser#type.
@@ -59,7 +59,7 @@ class rulesListener(ParseTreeListener):
 
     # Exit a parse tree produced by rulesParser#type.
     def exitType(self, ctx:rulesParser.TypeContext):
-        ("type")
+        pass
 
 
     # Enter a parse tree produced by rulesParser#block.
@@ -68,7 +68,7 @@ class rulesListener(ParseTreeListener):
 
     # Exit a parse tree produced by rulesParser#block.
     def exitBlock(self, ctx:rulesParser.BlockContext):
-        print("block")
+        pass
 
 
     # Enter a parse tree produced by rulesParser#statements.
@@ -77,7 +77,7 @@ class rulesListener(ParseTreeListener):
 
     # Exit a parse tree produced by rulesParser#statements.
     def exitStatements(self, ctx:rulesParser.StatementsContext):
-        print("statments")
+        pass
 
 
     # Enter a parse tree produced by rulesParser#empty.
@@ -86,7 +86,7 @@ class rulesListener(ParseTreeListener):
 
     # Exit a parse tree produced by rulesParser#empty.
     def exitEmpty(self, ctx:rulesParser.EmptyContext):
-        print("empty")
+        pass
 
 
     # Enter a parse tree produced by rulesParser#statement.
@@ -95,7 +95,7 @@ class rulesListener(ParseTreeListener):
 
     # Exit a parse tree produced by rulesParser#statement.
     def exitStatement(self, ctx:rulesParser.StatementContext):
-        print("statement")
+        pass
 
 
     # Enter a parse tree produced by rulesParser#items.
@@ -104,7 +104,7 @@ class rulesListener(ParseTreeListener):
 
     # Exit a parse tree produced by rulesParser#items.
     def exitItems(self, ctx:rulesParser.ItemsContext):
-        print("items")
+        pass
 
 
     # Enter a parse tree produced by rulesParser#item.
@@ -113,7 +113,7 @@ class rulesListener(ParseTreeListener):
 
     # Exit a parse tree produced by rulesParser#item.
     def exitItem(self, ctx:rulesParser.ItemContext):
-        print("item")
+        pass
 
 
     # Enter a parse tree produced by rulesParser#expression.
@@ -122,8 +122,7 @@ class rulesListener(ParseTreeListener):
 
     # Exit a parse tree produced by rulesParser#expression.
     def exitExpression(self, ctx:rulesParser.ExpressionContext):
-        print(ctx.getText())
-        print("expr")
+        pass
 
 
     # Enter a parse tree produced by rulesParser#parameters.
@@ -132,7 +131,7 @@ class rulesListener(ParseTreeListener):
 
     # Exit a parse tree produced by rulesParser#parameters.
     def exitParameters(self, ctx:rulesParser.ParametersContext):
-        print("param")
+        pass
 
 
     # Enter a parse tree produced by rulesParser#unaryoperator.
@@ -141,7 +140,7 @@ class rulesListener(ParseTreeListener):
 
     # Exit a parse tree produced by rulesParser#unaryoperator.
     def exitUnaryoperator(self, ctx:rulesParser.UnaryoperatorContext):
-        print("uop")
+        pass
 
 
     # Enter a parse tree produced by rulesParser#binaryoperator.
@@ -150,7 +149,7 @@ class rulesListener(ParseTreeListener):
 
     # Exit a parse tree produced by rulesParser#binaryoperator.
     def exitBinaryoperator(self, ctx:rulesParser.BinaryoperatorContext):
-        print("bop")
+        pass
 
 
 

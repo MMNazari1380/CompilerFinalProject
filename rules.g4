@@ -39,16 +39,12 @@ C_B: '}';
 O_P: '(';
 C_P: ')';
 SC: ';';
+DQ: '"';
 ASSIGN: '=';
 COMMA: ',';
-ID: [a-zA-Z_] [a-zA-Z_0-9]* {
-	if localctx.getText() == "true" or localctx.getText() == "false" or localctx.getText() == "int" or localctx.getText() == "double" or localctx.getText() == "void" or localctx.getText() == "boolean" or localctx.getText() == "if" or localctx.getText() == "else" or localctx.getText() == "while" or localctx.getText() == "return":
-			print("error keyword in id")
-			
+ID: {return $text not in ["true", "false", "int", "double", "void", "boolean", "return", "if", "else", "while"]}? [a-zA-Z_] [a-zA-Z_0-9]* ;
 
-};
-
-STRING: BASIC_SOURCE_CHAR*;
+STRING: DQ BASIC_SOURCE_CHAR* DQ;
 BASIC_SOURCE_CHAR: ~["\\\n] | ESCAPE_SEQUENCE;
 ESCAPE_SEQUENCE: '\\' ('"' | '\\');
 COMMENT: '/*' .*? '*/'-> skip;
